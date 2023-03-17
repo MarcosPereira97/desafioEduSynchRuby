@@ -1,4 +1,4 @@
-default: -p html -p bdd -p json -p edge
+default: -p html -p bdd -p json -p chrome -p report
 headless: -p html -p bdd -p json -p chrome_headless -p retry
 
 html: --format html --out=data/report/features.html
@@ -10,3 +10,4 @@ edge: BROWSER=edge
 chrome_headless: BROWSER=chrome_headless
 edge_headless: BROWSER=edge_headless
 retry: --retry 1
+report:  --publish
