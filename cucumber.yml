@@ -1,13 +1,14 @@
 default: -p html -p bdd -p json -p chrome -p report
 headless: -p html -p bdd -p json -p chrome_headless -p retry
 
-html: --format html --out=data/report/features.html
+html: --format html --out=report/features.html
 dot: --format progress
 bdd: --format pretty
-json: --format json --out="data/report/report.json"
+json: --format json --out="report/report.json"
 chrome: BROWSER=chrome
 edge: BROWSER=edge
 chrome_headless: BROWSER=chrome_headless
 edge_headless: BROWSER=edge_headless
 retry: --retry 1
-report:  --publish
+allure-report:  --format AllureCucumber::Formatter --out=report/report.html
+report: --publish-quiet
