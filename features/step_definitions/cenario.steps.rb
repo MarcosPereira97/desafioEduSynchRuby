@@ -2,15 +2,19 @@ Dado('que acesso a plataforma EduSynch') do
   visit "/"
 end
 
-Dado('realizo o login com {string} e {string}') do |usuario, senha|
-  @login.realiza_login(usuario, senha)
+Quando('realizo login utilizando credenciais válidas') do
+  @login.realiza_login
 end
 
-Quando('realizo a prova') do
-  @prova.inicia_prova
-  sleep(10)
+Quando('efetuo os procedimentos necessarios para realizar a prova') do
+  @preparacao.inicia_preparacao
+  @preparacao.tira_fotos
 end
 
-Então('verifico o resultado') do
+Quando('respondo as perguntas') do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Então('visualizo a tela final') do
   pending # Write code here that turns the phrase above into concrete actions
 end
