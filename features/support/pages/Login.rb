@@ -13,6 +13,10 @@ class Login < SitePrism::Page
 end
 
 class TestPreparations < SitePrism::Page
+  element :btn_takePhoto, ':nth-child(2) > .css-uc660u > .MuiTypography-root'
+  element :btn_next, '.css-1p94n78'
+  element :btn_acceptTerms, "[data-top='657']"
+
   def inicia_preparacao
     click_button 'Start a CEFR Reading Test'
     click_button 'Next'
@@ -25,17 +29,27 @@ class TestPreparations < SitePrism::Page
   end
 
   def tira_fotos
-    # Necessita de interferencia humana para realizar a permissão da camera
-    # Apenas no inicio de cada teste 
+    # Necessita de interferencia humana para realizar a permissão de acesso a camera
 
-    sleep(5)
     tira_foto
-    within '.css-1mi3tt8 .css-19xywav' do
-      click_button 'Take a photo'
-    end
+    btn_takePhoto.click
     for a in 1..2 do
       tira_foto
-     end
-     click_button 'Begin Room Scan'
+    end
+    click_button 'Begin Room Scan'
+    for a in 1..11 do
+      # Necessita de interferencia humana para realizar o compartilhamento de tela
+
+      btn_next.click
+      sleep(1.5)
+    end
+    sleep(10)
+  end
+
+  def realiza_prova
+    for i in 1..2 do
+      click_button 'Continue'
+    end
+    
   end
 end

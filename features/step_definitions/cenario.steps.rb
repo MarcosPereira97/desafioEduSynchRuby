@@ -12,7 +12,7 @@ Quando('efetuo os procedimentos necessarios para realizar a prova') do
 end
 
 Quando('respondo as perguntas') do
-  pending # Write code here that turns the phrase above into concrete actions
+  @preparacao.realiza_prova
 end
 
 Então('visualizo a tela final') do
