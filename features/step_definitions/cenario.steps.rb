@@ -12,6 +12,7 @@ Quando('efetuo os procedimentos necessarios para realizar a prova') do
 end
 
 Quando('respondo as perguntas') do
+  @prova.realiza_prova
 end
 
 Então('visualizo a tela final') do
