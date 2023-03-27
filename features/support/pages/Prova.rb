@@ -4,9 +4,6 @@ class Prova < SitePrism::Page
     def realiza_prova
       option = %w[A B C D]
   
-      for i in 1..2 do
-        click_button 'Continue'
-      end
       qtd_perguntas = find_element('.css-hqr8k2 .css-16agw28').getText
   
       puts qtd_perguntas
