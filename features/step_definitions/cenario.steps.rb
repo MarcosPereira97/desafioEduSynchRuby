@@ -8,11 +8,10 @@ end
 
 Quando('efetuo os procedimentos necessarios para realizar a prova') do
   @preparacao.inicia_preparacao
-  @preparacao.tira_fotos
+  @preparacao.preparacao_prova
 end
 
 Quando('respondo as perguntas') do
-  @preparacao.realiza_prova
 end
 
 Então('visualizo a tela final') do
