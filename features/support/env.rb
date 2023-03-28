@@ -1,25 +1,23 @@
-require "capybara"
-require "capybara/cucumber"
-require "selenium-webdriver"
-require "site_prism"
+require 'capybara'
+require 'capybara/cucumber'
+require 'selenium-webdriver'
+require 'site_prism'
+require 'allure-cucumber'
+require 'capybara/poltergeist'
 
-@browser = ENV["BROWSER"]
+options = Selenium::WebDriver::Chrome::Options.new
+
+Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.new(app,
+                                 capabilities: options,
+                                 browser: :chrome)
+end
+Capybara.default_driver = :chrome
 
 Capybara.configure do |config|
-  case @browser
-  when "chrome"
-    @driver = :selenium_chrome
-  when "edge"
-    @driver = :selenium_webdriver
-  when "chrome_headless"
-    @driver = :selenium_chrome_headless
-  when "edge_headless"
-    @driver = :selenium_webdriver_headless
-  end
-
-  config.default_driver = @driver
+  config.default_driver = :chrome
   config.default_max_wait_time = 30
-  config.default_selector = :css
+  config.app_host = 'https://develop.newstudent.edusynch.com/'
 end
 
-EL = YAML.load_file("./data/elm.yml")
+Selenium::WebDriver.logger.ignore(:deprecations)

@@ -1,7 +1,10 @@
-source "http://rubygems.org"
-
-gem "capybara"
-gem "cucumber"
-gem "rspec"
-gem "selenium-webdriver"
-gem "site_prism"
+source 'https://rubygems.org' do
+  gem 'allure-cucumber'
+  gem 'capybara'
+  gem 'cucumber'
+  gem 'rspec'
+  gem 'selenium-webdriver'
+  gem 'site_prism'
+  gem 'webdrivers'
+  gem 'poltergeist'
+end
