@@ -15,7 +15,14 @@ Realizar o download do Ruby + Devkit através do link: [Ruby](<https://rubyinsta
 Realizar o download da versão recomendada através do link: [JAVA JDK](<https://www.oracle.com/java/technologies/downloads/#jdk20-windows>).
 
 
-Após instalado adicionar em variáveis de ambiente JAVA_HOME, [guia de configuração](https://confluence.atlassian.com/confbr1/configurando-a-variavel-java_home-no-windows-933709538.html)
+
+
+### ChromeDriver
+
+Realizar o download do chromedriver, navegador utilizado ao executar o teste automtizado. [chromedriver](<https://chromedriver.chromium.org/downloads>)
+
+Após realizar o download e instalação de todos os itens citados acima, adicionar no PATH do computador dentro de Variáveis do Sistema o caminho onde se encotra o Chromedriver e também JAVA_HOME. Abaixo estou deixando um guia caso ocorra alguma dúvida.
+ [guia de configuração](<https://confluence.atlassian.com/confbr1/configurando-a-variavel-java_home-no-windows-933709538.html>)
 
 ## Executando os testes
 
