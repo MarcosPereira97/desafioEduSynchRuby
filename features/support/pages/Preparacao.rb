@@ -29,15 +29,15 @@ class TestPreparations < SitePrism::Page
     end
     click_link_or_button 'Begin Room Scan'
     sleep(2)
-    for n in 1..1 do
+    for n in 1..9 do
       # Necessita de interferencia humana para realizar a permissão de compartilhamento de tela
-
+      assert_text 'Next'
       click_button 'Next'
-      sleep(1.5)
+      sleep(2)
     end
     btn_UnderstandAgree.click
     for i in 1..2 do
-      sleep(1)
+      sleep(2)
       click_button 'Continue'
     end
   end
