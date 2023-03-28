@@ -7,7 +7,7 @@ class Prova < SitePrism::Page
 
     for p in 1..24 do
       body = find('.css-p4ia69')
-      if body.find('.css-1aymzu7 > :nth-child(1) > .MuiAvatar-root').length > 0
+      if body.find('.css-1aymzu7 > :nth-child(1) > .MuiAvatar-root') == true
         header = find('.css-1aymzu7 > :nth-child(1) > .MuiAvatar-root')
         if header.is(':visible')
           within("div[class*='css-1aymzu7']") do
